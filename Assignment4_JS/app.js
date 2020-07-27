@@ -63,6 +63,7 @@ passport.deserializeUser(function (id, done) {
 });
 
 //Local strategy for authenticating users
+//Always looking for fields with name username and password
 passport.use(new LocalStrategy(function (userEmail, password, done) {
     userModel.findOne({ email: userEmail }, function (err, user) {
         if (err) return done(err);
