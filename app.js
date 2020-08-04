@@ -16,6 +16,7 @@ var GoogleStrategy = require('passport-google-oauth').OAuth2Strategy;
 const MongoClient = require('mongodb').MongoClient;
 var mongoose = require('mongoose');
 const uri = "mongodb+srv://admin:Thalesfv00@cluster0-vqo7y.mongodb.net/userStore?retryWrites=true&w=majority";
+
 try {
     mongoose.connect(uri, { useNewUrlParser: true });
     var db = mongoose.connection;
@@ -88,6 +89,7 @@ passport.use(new LocalStrategy(function (userEmail, password, done) {
     });
 }));
 
+/*
 // Use the GoogleStrategy within Passport.
 //   Strategies in Passport require a `verify` function, which accept
 //   credentials (in this case, an accessToken, refreshToken, and Google
@@ -109,7 +111,7 @@ passport.use(new GoogleStrategy({
         });
     }
 ));
-
+*/
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
