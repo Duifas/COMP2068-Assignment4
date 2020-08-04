@@ -3,10 +3,13 @@ block content
     h1 Login Page
     form(method='POST' action='/login')
         fieldset
-            label(for='username') Username
-            input#username(type='text' name='username')
+            label(for='userEmail') Email
+            input#userEmail(type='text' name='username')
         fieldset
             label(for='password') Password
             input#password(type='password' name='password')
         input(type='submit' value='Login')
+        br
+        fieldset
+            a(href="/auth/google") Sign In with Google
     include partials/footer
