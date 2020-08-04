@@ -10,6 +10,7 @@ var bodyParser = require('body-parser');
 var passport = require('passport');
 var LocalStrategy = require('passport-local').Strategy;
 var bcrypt = require('bcryptjs');
+var GoogleStrategy = require('passport-google-oauth').OAuth2Strategy;
 
 //Addition of Mongo client for connection of database
 const MongoClient = require('mongodb').MongoClient;
@@ -75,6 +76,28 @@ passport.use(new LocalStrategy(function (userEmail, password, done) {
         return done(null, user);
     });
 }));
+
+// Use the GoogleStrategy within Passport.
+//   Strategies in Passport require a `verify` function, which accept
+//   credentials (in this case, an accessToken, refreshToken, and Google
+//   profile), and invoke a callback with a user object.
+passport.use(new GoogleStrategy({
+    clientID: "944451347651-qn04pi7vka2meg6kvuvhpir0j6arr49h.apps.googleusercontent.com",
+    clientSecret: "ooAvX7OTr6-PrMDiuwZhV-bY",
+    callbackURL: "http://localhost:1337/auth/google/callback"
+},
+    function (accessToken, refreshToken, profile, done) {
+        userModel.find({ email: profile.id }, function (err, user) {
+            var newUser = { email: profile.id };
+            const addUser = new userModel(newUser);
+            addUser.save(function (err) {
+                console.log('Inserting new user!');
+                if (err) console.log(err);
+                    return done(null, addUser);
+            });
+        });
+    }
+));
 
 
 // catch 404 and forward to error handler

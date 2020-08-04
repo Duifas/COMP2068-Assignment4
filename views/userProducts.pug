@@ -19,9 +19,11 @@ block content
                             td= product.productName
                             td= "$" + product.productPrice
                             td 
-                                a(href='/update/' + product.id) Update
-                            td
-                                a(href='/delete/'+product.id) Delete
+                                a.change(href='/update/' + product.id) Update
+                                br
+                                br
+                                form.deleteForm(id=product.id)
+                                    button(type='submit') Delete
                         
 
     include partials/footer
