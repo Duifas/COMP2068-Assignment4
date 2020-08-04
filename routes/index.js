@@ -3,11 +3,6 @@ var express = require('express');
 var router = express.Router();
 var passport = require('passport');
 var bcrypt = require('bcryptjs');
-var formidable = require('formidable');
-var path = require('path');
-var fs = require('fs');
-
-var productModel = require('../models/products');
 var userModel = require('../models/users');
 
 /* GET home page. */
@@ -94,6 +89,7 @@ router.post('/register', function (req, res) {
     });
 });
 
+<<<<<<< HEAD:routes/index.js
 // GET products page
 router.get('/products', function (req, res) {
 
@@ -201,4 +197,6 @@ router.post('/delete/:id', function (req, res) {
     });
 });
 
+=======
+>>>>>>> parent of c944cc2... Addition of products page, user products page and addition of CRUD:Assignment4_JS/routes/index.js
 module.exports = router;
