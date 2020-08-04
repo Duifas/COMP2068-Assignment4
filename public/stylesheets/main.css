@@ -1,4 +1,12 @@
-﻿html {
+﻿/*
+ * Name: Thales Barros Fajardo Valente
+ * Student ID: 200400698
+ * Date: 08/04/2020
+ * 
+ * Description: Creation of the css files holding all the display changes for the front-end display
+ */
+
+html {
     background-color: black;
 }
 
@@ -40,9 +48,8 @@ table {
 }
 
 header, nav, nav a {
-    width:100%;
+    width: 100%;
     margin: auto;
-
 }
 
 
@@ -64,10 +71,10 @@ ol, ul {
     padding: 0;
 }
 
-ol li, ul li {
-    list-style-position: inside;
-    font-size: 15px;
-}
+    ol li, ul li {
+        list-style-position: inside;
+        font-size: 15px;
+    }
 
 .change {
     border: 1px solid black;
@@ -76,7 +83,7 @@ ol li, ul li {
     padding: 3px;
 }
 
-.change:hover {
-    color: blue;
-    background-color: black;
-}
+    .change:hover {
+        color: blue;
+        background-color: black;
+    }

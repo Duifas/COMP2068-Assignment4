@@ -1,7 +1,7 @@
 ﻿'use strict';
 var debug = require('debug');
 var express = require('express');
-var session = require('express-session');  
+var session = require('express-session');
 var path = require('path');
 var favicon = require('serve-favicon');
 var logger = require('morgan');
@@ -10,7 +10,15 @@ var bodyParser = require('body-parser');
 var passport = require('passport');
 var LocalStrategy = require('passport-local').Strategy;
 var bcrypt = require('bcryptjs');
-var GoogleStrategy = require('passport-google-oauth').OAuth2Strategy;
+var GoogleStrategy = require('passport-google-oauth20').OAuth2Strategy;
+
+/*
+ * Name: Thales Barros Fajardo Valente
+ * Student ID: 200400698
+ * Date: 07/06/2020
+ * 
+ * Description: Creation of the npm libraries and mainly the passport for user authentication
+ */
 
 //Addition of Mongo client for connection of database
 const MongoClient = require('mongodb').MongoClient;
@@ -97,7 +105,7 @@ passport.use(new LocalStrategy(function (userEmail, password, done) {
 passport.use(new GoogleStrategy({
     clientID: "944451347651-qn04pi7vka2meg6kvuvhpir0j6arr49h.apps.googleusercontent.com",
     clientSecret: "ooAvX7OTr6-PrMDiuwZhV-bY",
-    callbackURL: "http://localhost:1337/auth/google/callback"
+    callbackURL: "https://assignment2comp2068.herokuapp.com/auth/google/callback"
 },
     function (accessToken, refreshToken, profile, done) {
         userModel.find({ email: profile.id }, function (err, user) {

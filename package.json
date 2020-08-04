@@ -1,32 +1,28 @@
 {
-  "name": "assignment4_js",
+  "name": "assignment2_js",
   "version": "0.0.0",
   "private": true,
   "scripts": {
     "start": "node app"
   },
-  "description": "Assignment4_JS",
+  "description": "Assignment2_JS",
   "author": {
     "name": ""
   },
   "dependencies": {
     "bcryptjs": "^2.4.3",
     "body-parser": "^1.15.0",
-    "connect-mongo": "^3.2.0",
     "cookie-parser": "^1.4.0",
     "debug": "^2.2.0",
     "express": "^4.14.0",
     "express-session": "^1.17.1",
     "formidable": "^1.2.2",
     "fs": "0.0.1-security",
-    "mongo": "^0.1.0",
     "mongodb": "^3.6.0",
-    "mongojs": "^3.1.0",
-    "mongoo": "^0.3.5",
     "mongoose": "^5.9.27",
     "morgan": "^1.7.0",
     "passport": "^0.4.1",
-    "passport-google-oauth": "^2.0.0",
+    "passport-google-oauth20": "^2.0.0",
     "passport-local": "^1.0.0",
     "path": "^0.12.7",
     "pug": "^2.0.0-beta6",

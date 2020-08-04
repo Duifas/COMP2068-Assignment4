@@ -1,4 +1,12 @@
-﻿'use strict';
+﻿/*
+ * Name: Thales Barros Fajardo Valente
+ * Student ID: 200400698
+ * Date: 07/06/2020
+ * 
+ * Description: Main router file that connect all pages and POST functions
+ */
+
+'use strict';
 var express = require('express');
 var router = express.Router();
 var passport = require('passport');
@@ -54,7 +62,6 @@ router.get('/auth/google/callback',
     function (req, res) {
         res.redirect('/');
     });
-
 */
 
 
@@ -100,8 +107,8 @@ router.get('/products', function (req, res) {
     productModel.find({}, function (err, docs) {
 
         if (!err) {
-            
-            res.render('products', { user: req.user, products: docs});
+
+            res.render('products', { user: req.user, products: docs });
         }
         else {
             console.log(err);
@@ -120,7 +127,7 @@ router.post('/products', function (req, res) {
         //Update filename
         files.productImage.name = fields.productName + '.' + files.productImage.name.split('.')[1];
         //Create a new product using the Products Model Schema
-        const product = new productModel({ productName: fields.productName, productPrice: fields.productPrice, productImage: files.productImage.name, userId: req.user._id});
+        const product = new productModel({ productName: fields.productName, productPrice: fields.productPrice, productImage: files.productImage.name, userId: req.user._id });
 
         //Insert product into DB
         product.save(function (err) {

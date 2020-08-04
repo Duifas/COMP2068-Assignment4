@@ -1,4 +1,4 @@
-﻿# Assignment4_JS
+﻿# Assignment2_JS
 
 Name: Thales Barros Fajardo Valente
 Student Number: 200400698
@@ -14,3 +14,4 @@ This application has the objective to be a general store. Users can add, edit an
 -List of All Products Page
 
 This application will be submitted to this GitHub repository and pushed to a cloud server, being able to function online and from any computer. The database will be created by MongoDB. 
+
