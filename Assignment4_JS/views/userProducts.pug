@@ -1,0 +1,27 @@
+﻿extends partials/header
+
+block content
+    
+    h1 Your Products
+    
+    table
+            thead
+                th Product Image
+                th Product Name
+                th Product Price
+                th Options
+            tbody
+                each product in products
+                    if(user._id == product.userId)
+                        tr
+                            td
+                                img(src='/images/'+product.productImage)
+                            td= product.productName
+                            td= "$" + product.productPrice
+                            td 
+                                a(href='/update/' + product.id) Update
+                            td
+                                a(href='/delete/'+product.id) Delete
+                        
+
+    include partials/footer

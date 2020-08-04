@@ -6,3 +6,8 @@
 a {
     color: #00B7FF;
 }
+
+table, thead, tbody, td, th {
+    border: 1px solid black;
+    text-align:center;
+}
